@@ -2,6 +2,7 @@
   "name": "interview-cake-answers",
   "description": "Nodejs JavaScript Solutions to Interview Cake problems",
   "version": "0.0.1",
+  "private": true,
   "dependencies": {
   },
   "repository": {

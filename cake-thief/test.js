@@ -3,9 +3,9 @@
  */
 
 /**
- * Problem Statement
+ * Problem Statement (from Interview Cake, http://www.interviewcake.com)
  *
- * You are a renowned thief who has recently switched from stealing precious metals to stealing cakes because of the
+ * "You are a renowned thief who has recently switched from stealing precious metals to stealing cakes because of the
  * insane profit margins. You end up hitting the jackpot, breaking into the world's largest privately owned stock of
  * cakes—the vault of the Queen of England.
  *
@@ -37,7 +37,7 @@
  *
  *    Weights and values may be any non-negative integer. Yes, it's weird to think about cakes that weigh nothing or
  *    duffel bags that can't hold anything. But we're not just super mastermind criminals—we're also meticulous about
- *    keeping our algorithms flexible and comprehensive.
+ *    keeping our algorithms flexible and comprehensive."
  */
 
 var cakeThief  = require('./dynamicUKP.js');
