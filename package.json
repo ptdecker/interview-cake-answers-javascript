@@ -1,0 +1,11 @@
+{
+  "name": "interview-cake-answers",
+  "description": "Nodejs JavaScript Solutions to Interview Cake problems",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/ptdecker/interview-cake-answers-javascript.git"
+  }
+}
