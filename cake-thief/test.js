@@ -40,15 +40,17 @@
  *    keeping our algorithms flexible and comprehensive."
  */
 
+"use strict";
+
 var cakeThief  = require('./dynamicUKP.js');
 
-var cakeTuples = [[7,160], [3,90], [2,15]];
+var cakeTuples = [[7, 160], [3, 90], [2, 15]];
 var capacity   = 20;
 
 // Test 1: Happy Path
 var result = cakeThief.dynamicUKP(cakeTuples, capacity);
 console.log("Happy Path");
-console.log("  cakeTuples: ",JSON.stringify(cakeTuples));
+console.log("  cakeTuples: ", JSON.stringify(cakeTuples));
 console.log("  capacity  : ", capacity);
 console.log("  result    : ", result, (result === 555) ? " (pass)" : " (fail)");
 
@@ -56,7 +58,7 @@ console.log("  result    : ", result, (result === 555) ? " (pass)" : " (fail)");
 capacity   = 0;
 result = cakeThief.dynamicUKP(cakeTuples, capacity);
 console.log("Zero Capacity");
-console.log("  cakeTuples: ",JSON.stringify(cakeTuples));
+console.log("  cakeTuples: ", JSON.stringify(cakeTuples));
 console.log("  capacity  : ", capacity);
 console.log("  result    : ", result, (result === 0) ? " (pass)" : " (fail)");
 
@@ -64,35 +66,35 @@ console.log("  result    : ", result, (result === 0) ? " (pass)" : " (fail)");
 capacity   = -10;
 result = cakeThief.dynamicUKP(cakeTuples, capacity);
 console.log("Negative Capacity");
-console.log("  cakeTuples: ",JSON.stringify(cakeTuples));
+console.log("  cakeTuples: ", JSON.stringify(cakeTuples));
 console.log("  capacity  : ", capacity);
 console.log("  result    : ", result, (result === 0) ? " (pass)" : " (fail)");
 
 // Test 4: Zero weight and Zero Value
 capacity   = 20;
-cakeTuples.push([0,0]);
+cakeTuples.push([0, 0]);
 result = cakeThief.dynamicUKP(cakeTuples, capacity);
 console.log("A Zero Weight and Value Item");
-console.log("  cakeTuples: ",JSON.stringify(cakeTuples));
+console.log("  cakeTuples: ", JSON.stringify(cakeTuples));
 console.log("  capacity  : ", capacity);
 console.log("  result    : ", result, (result === 555) ? " (pass)" : " (fail)");
 
 // Test 5: Non-zero weight and Zero Value
 capacity   = 20;
 cakeTuples.pop();
-cakeTuples.push([10,0]);
+cakeTuples.push([10, 0]);
 result = cakeThief.dynamicUKP(cakeTuples, capacity);
 console.log("A Zero Value Item");
-console.log("  cakeTuples: ",JSON.stringify(cakeTuples));
+console.log("  cakeTuples: ", JSON.stringify(cakeTuples));
 console.log("  capacity  : ", capacity);
 console.log("  result    : ", result, (result === 555) ? " (pass)" : " (fail)");
 
 // Test 6: Zero weight and Non-zero Value
 capacity   = 20;
 cakeTuples.pop();
-cakeTuples.push([0,10]);
+cakeTuples.push([0, 10]);
 result = cakeThief.dynamicUKP(cakeTuples, capacity);
 console.log("A Zero Weight Item");
-console.log("  cakeTuples: ",JSON.stringify(cakeTuples));
+console.log("  cakeTuples: ", JSON.stringify(cakeTuples));
 console.log("  capacity  : ", capacity);
 console.log("  result    : ", result, (result === 555) ? " (pass)" : " (fail)");
