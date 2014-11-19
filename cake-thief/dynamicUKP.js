@@ -38,7 +38,7 @@ module.exports.dynamicUKP = function dynamicUKP(tuples, capacity) {
 
     var WEIGHT   = 0,   // Index of the tuple element that defines the weight (constant)
         VALUE    = 1,   // Index of the tuple element that defines the value (constant)
-        knapsack = [0], // initialize our knapsack array with a zero value first element
+        knapsack = [0], // Initialize our knapsack array with a zero value first element
         max,
         c, l,           // Pre-calc loop termination (c - capacity, l - tuples.length)
         i, j,           // Loop indices
@@ -58,5 +58,5 @@ module.exports.dynamicUKP = function dynamicUKP(tuples, capacity) {
         }
     }
 
-    return knapsack[Math.floor(capacity)];
+    return knapsack[c];
 };
