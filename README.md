@@ -9,4 +9,4 @@ plus a test script that runs through the test cases presented by the Interview C
 Solutions:
 
 * 8 'Cake Thief' - Solved using a dynamic programming solution to the unbounded knapsack problem
-* 9 'Linked List' - Solved by creating a doubly-linked list (different than InterviewCake proscribed solution)
+* 9 'Linked List' - Solved by using a single linked list
