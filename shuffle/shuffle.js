@@ -11,7 +11,7 @@
 // Deck constructor
 
 function Deck(content) {
-    this.data = content;
+    this.deck = content;
 }
 
 /*
@@ -20,7 +20,7 @@ function Deck(content) {
  * (based on http://stackoverflow.com/a/363692)
  */
 
-Deck.prototype.get_random = function get_random(min, max) {
+Deck.prototype.getRandom = function getRandom(min, max) {
 
     // Return a random number between 'min' and 'max' inclusive so long as min is less than max
 
@@ -36,7 +36,7 @@ Deck.prototype.get_random = function get_random(min, max) {
 
     // Otherwise, we were passed a condition where 'max' is less than 'min' so throw an error
 
-    return new Error("Function 'get_random' was passed a minimum value greater than the passed maximum value");
+    return new Error("Function 'getRandom' was passed a minimum value greater than the passed maximum value");
 };
 
 /*
@@ -45,13 +45,13 @@ Deck.prototype.get_random = function get_random(min, max) {
 
 Deck.prototype.swap = function swap(i, j) {
 
-    var size = this.data.length,
+    var size = this.deck.length,
         temp;
 
     // Check the boundaries of the array and throw an error if we're being asked to swap items outside these bounds
 
     if (i < 0 || i >= size || j < 0 || j >= size) {
-        return new Error("Function 'swap' was passed array indexes outside of the size of data array");
+        return new Error("Function 'swap' was passed array indexes outside of the size of deck array");
     }
 
     // If we're being asked to swap the same two elements, than there is nothing to do
@@ -62,9 +62,9 @@ Deck.prototype.swap = function swap(i, j) {
 
     // Otherwise, swap the two elements
 
-    temp = this.data[i];
-    this.data[i] = this.data[j];
-    this.data[j] = temp;
+    temp = this.deck[i];
+    this.deck[i] = this.deck[j];
+    this.deck[j] = temp;
     return null;
 
 };
@@ -77,9 +77,9 @@ Deck.prototype.swap = function swap(i, j) {
 
 Deck.prototype.shuffle = function() {
     var i;
-    if (this.data.length > 0) {
-        for (i = (this.data.length) - 1; i > 0; i -= 1) {
-            this.swap(this.get_random(0, i), i);
+    if (this.deck.length > 0) {
+        for (i = (this.deck.length) - 1; i > 0; i -= 1) {
+            this.swap(this.getRandom(0, i), i);
         }
     }
     return null;

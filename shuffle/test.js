@@ -8,13 +8,13 @@
  * Write a function for doing an in-place (http://en.wikipedia.org/wiki/In-place_algorithm) shuffle of an array.
  *
  * The shuffle must be "uniform," meaning each item in the original array must have the same probability of ending up
- * in each spot in the final array. Assume that you have a function get_random(floor, ceiling) for getting a random
+ * in each spot in the final array. Assume that you have a function getRandom(floor, ceiling) for getting a random
  * integer that is >=floor and <=ceiling.
  */
 
 "use strict";
 
-var Deck = require('./Shuffle.js');
+var Deck = require('./shuffle.js');
 
 var deck = new Deck([
         "AS", "1S", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "JS", "QS", "KS",
