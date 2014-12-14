@@ -150,7 +150,7 @@ Deck.prototype.isRiffleShuffled = function isRiffleShuffled() {
         j = 0,  // index pointer for deck half one
         k = 0;  // index pointer for deck half two
 
-    for (i = 0; i < this.deck.length; i += 1) {
+    for (i; i < this.deck.length; i += 1) {
         if (this.deck[i] !== this.half1[j] && this.deck[i] !== this.half2[k]) {
             return false;
         }

@@ -1,5 +1,6 @@
 /**
  * Created by ptdecker on 2014-11-19
+ * Updated on 2014-12-13 by ptdecker to include kthToLastNode() function
  */
 
 /*
@@ -50,6 +51,47 @@ Node.prototype.walkDown = function walkDown() {
         }
     }
     return nodeList;
+};
+
+/*
+ * Return the "kth to the last node"
+ *
+ * Will return 'null' if there are less than kth items in the list
+ */
+
+Node.prototype.kthToLastNode = function kthToLastNode(k) {
+
+    if (k < 1) {
+        return new Error("'kthToLastNode' was passed a value less than '1'");
+    }
+
+    var currentNode = this,
+        kthNode = this,
+        nodeCount = 0;
+
+/*    while (currentNode) {
+        if (nodeCount < k) {
+            nodeCount += 1;
+            if (nodeCount === k) {
+                kthNode = this;
+            }
+        } else {
+            kthNode = kthNode.nextNode;
+        }
+        currentNode = currentNode.nextNode;
+    }
+*/
+    while (currentNode && nodeCount < k) {
+        currentNode = currentNode.nextNode;
+        nodeCount += 1;
+    }
+
+    while (currentNode) {
+        currentNode = currentNode.nextNode;
+        kthNode = kthNode.nextNode;
+    }
+
+    return (nodeCount < k ? null : kthNode.data);
 };
 
 module.exports = Node;

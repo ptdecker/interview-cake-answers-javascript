@@ -12,3 +12,4 @@ Solutions:
 * 09 'Linked List' - Solved by using a single linked list
 * 10 'Shuffle' - Solved by using the Fisher-Yates in-place shuffle algorithm
 * 11 'Single Riffle Check' - Solved by writing a riffle shuffle function and corresponding check
+* 12 'kth To The Last Element' - Solved by using a second offset sliding pointer
