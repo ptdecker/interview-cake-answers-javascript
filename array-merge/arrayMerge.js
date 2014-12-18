@@ -4,15 +4,26 @@
 
 /*
  * Simple Sorted Array Merge Utility Function
- */
+ **/
 
 "use strict";
 
 module.exports.merge = function merge(array1, array2) {
+
     var result = [],
         i = 0,
         j = 0;
+
     while (i < array1.length || j < array2.length) {
+
+        // The logic below handles four cases but condenses them into the two ultimate outcomes:
+        //   - pushing array1's next element if either
+        //      - if array2 is empty, or
+        //      - array1's next element is less than array2's next element
+        //   - otherwise, pushing array2's next element since
+        //      - either array1 is now empty, or
+        //      - array1's next element is equal two or great than array2's next element
+
         if ((i < array1.length && array1[i] < array2[j]) ||  j === array2.length) {
             result.push(array1[i]);
             i += 1;
@@ -21,6 +32,7 @@ module.exports.merge = function merge(array1, array2) {
             j += 1;
         }
     }
+
     return result;
 };
 
