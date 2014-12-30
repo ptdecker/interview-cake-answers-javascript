@@ -8,49 +8,57 @@
 
 "use strict";
 
+/*
+ * Swap the words in an array
+ *
+ * When passed only an array, 'swap' will swap all of the words in the array. 'Swap' can also be called by passing it
+ * an array plus indices indicating a sub-portion of the array and the 'sub' defined as true. This calling method is
+ * used by 'swap' itself recursively to correct word order.
+ */
 
-function subSwap(array, start, len) {
+function swap(source, leftIndex, rightIndex, sub) {
+
+    // Set the left and right starting index points if swap was called without them already defined. This will happen
+    // when swap is called for the first time with just an array. When it is recursively called to correct the letter
+    // order of words, the indices will be defined and sub should be 'true'.
+
+    leftIndex  = (leftIndex  !== undefined ? leftIndex : 0);
+    rightIndex = (rightIndex !== undefined ? rightIndex : source.length - 1);
+
     var temp,
-        i, j, k;
-    for (i = 0; (i + start) < (start + Math.floor(len / 2)); i += 1) {
-        j = (i + start);
-        k = (start + len - i - 1);
-        if (k > j) {
-            temp = array[j];
-            array[j] = array[k];
-            array[k] = temp;
-        }
-    }
-}
+        leftWordStartIndex = leftIndex,
+        rightWordStartIndex = rightIndex;
 
-function swap(source) {
+    for (leftIndex, rightIndex; leftIndex < rightIndex; leftIndex += 1, rightIndex -= 1) {
 
-    var temp,
-        leftIndex,
-        rightIndex,
-        length = source.length - 1,
-        middle = Math.floor(length / 2),
-        leftWordStartIndex = 0,
-        rightWordStartIndex = length;
+        // Swap the two array items pointed to by the left and right indices
 
-    for (leftIndex = 0; leftIndex <= middle; leftIndex += 1) {
-        rightIndex = length - leftIndex;
-        if (rightIndex > leftIndex) {
-            temp = source[leftIndex];
-            source[leftIndex] = source[rightIndex];
-            source[rightIndex] = temp;
-        }
+        temp = source[leftIndex];
+        source[leftIndex] = source[rightIndex];
+        source[rightIndex] = temp;
+
+        // Working from the left side of the array, if we have come to a word break then backtrack and fix the
+        // letter ordering of the word by recursively calling swap again with indices set.
+
         if (source[leftIndex] === ' ') {
-            subSwap(source, leftWordStartIndex, leftIndex - leftWordStartIndex);
+            swap(source, leftWordStartIndex, leftIndex - 1, true);
             leftWordStartIndex = (leftIndex + 1);
         }
+
+        // Working from the right side of the array, if we have come to a word break then backtrack and fix the
+        // letter ordering of the word by recursively calling swap again with indices set.
+
         if (source[rightIndex] === ' ') {
-            subSwap(source, rightIndex + 1, rightWordStartIndex - rightIndex);
+            swap(source, rightIndex + 1, rightWordStartIndex, true);
             rightWordStartIndex = (rightIndex - 1);
         }
     }
-    if (leftWordStartIndex < rightWordStartIndex) {
-        subSwap(source, leftWordStartIndex, rightWordStartIndex - leftWordStartIndex + 1);
+
+    // We may have one remaining word to fix. If so, fix it. But, don't attempt this if this is a recursively
+    // called version of swap otherwise we will infinitely recurse.
+
+    if (!sub && leftWordStartIndex < rightWordStartIndex) {
+        swap(source, leftWordStartIndex, rightWordStartIndex, true);
     }
 }
 
