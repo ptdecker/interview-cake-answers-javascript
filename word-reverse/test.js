@@ -17,7 +17,7 @@
  * # returns: 'if into the security recordings you go only pain will you find'
  *
  * When writing your function, assume the message contains only letters and spaces, and all words are separated by one
- * space. Strings are immutable ↴ in Python, so we can't use Python for in-place operations on a string. We'll use Ruby
+ * space. Strings are immutable in Python, so we can't use Python for in-place operations on a string. We'll use Ruby
  * instead.
  *
  * If you're not comfortable coding in a language with mutable strings, you could split the string into a list of

@@ -37,6 +37,8 @@ function swap(source, leftIndex, rightIndex, sub) {
         source[leftIndex] = source[rightIndex];
         source[rightIndex] = temp;
 
+//        console.log(("   "+leftIndex).slice(-4), ("    "+rightIndex).slice(-4), source.join(""));
+
         // Working from the left side of the array, if we have come to a word break then backtrack and fix the
         // letter ordering of the word by recursively calling swap again with indices set.
 
@@ -61,7 +63,6 @@ function swap(source, leftIndex, rightIndex, sub) {
         swap(source, leftWordStartIndex, rightWordStartIndex, true);
     }
 }
-
 
 module.exports.reverse = function reverse(source) {
     var mutableTempArray = source.split("");
