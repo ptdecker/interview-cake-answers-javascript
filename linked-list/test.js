@@ -20,7 +20,7 @@
 
 "use strict";
 
-var Node = require('./linkedList.js');
+var Node = require('./linkedlist.js');
 
 var a = new Node('A');
 var b = new Node('B');

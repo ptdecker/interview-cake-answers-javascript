@@ -27,7 +27,7 @@
 
 "use strict";
 
-var Node = require('./linkedList.js');
+var Node = require('./linkedlist.js');
 
 var a = new Node("Angel Food");
 var b = new Node("Bundt");

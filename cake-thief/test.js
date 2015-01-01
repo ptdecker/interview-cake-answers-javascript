@@ -42,7 +42,7 @@
 
 "use strict";
 
-var cakeThief  = require('./dynamicUKP.js');
+var cakeThief  = require('./dynamicukp.js');
 
 var cakeTuples = [[7, 160], [3, 90], [2, 15]];
 var capacity   = 20;

@@ -15,3 +15,4 @@ Solutions:
 * 12 'kth To The Last Element' - Solved by using a second offset sliding pointer
 * 13 'Sorted Array Merge' - Solved using in O(n+m) time and O(2(n+m)) space using indexes for each array w/BONUS solved
 * 14 'Reverse Words' - Solved using a recursive approach. Converted to an array to satisfy mutability requirement.
+* 15 'Bracket Validator' - Solved the main problem, but haven't yet figured out the bonus.
