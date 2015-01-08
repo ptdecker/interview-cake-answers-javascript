@@ -8,6 +8,7 @@ plus a test script that runs through the test cases presented by the Interview C
 
 Solutions:
 
+* 10 'Second Largest' - Implemented a BST library and added to it the ability to return the next to the 2nd largest
 * 16 'Cake Thief' - Solved using a dynamic programming solution to the unbounded knapsack problem
 * 22 'Delete Node' - Solved by using a single linked list
 * 25 'kth To The Last Node in a Singly-Linked List' - Solved by using a second offset sliding pointer
