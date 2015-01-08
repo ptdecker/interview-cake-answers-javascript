@@ -11,15 +11,6 @@
 
 "use strict";
 
-/* isEmpty
- *
- * Helper function that determines if an object is empty.
- */
-
-function isEmpty(obj) {
-    return Object.keys(obj).length === 0;
-}
-
 /* traverse
  *
  * Helper function that recursively traverses a binary search tree using a depth-first approach. For each node
@@ -212,7 +203,7 @@ var remove = function remove(data) {
 
 var get = function get(data) {
     var current = this.root,
-        parent;
+        parent = null;
     while (current) {
         if (data === current.value) {
             return {

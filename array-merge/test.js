@@ -27,38 +27,38 @@ var arrayMerge  = require('./arraymerge.js');
 var myArray     = [3, 4, 6, 10, 11, 15];
 var alicesArray = [1, 5, 8, 12, 14, 19];
 console.log("Happy Path Array Merge");
-console.log(arraymerge.merge(myArray, alicesArray));
+console.log(arrayMerge.merge(myArray, alicesArray));
 
 // Test edge cases
 
 console.log("Alternate Test Cases");
-console.log(arraymerge.merge([], [])); // both empty
-console.log(arraymerge.merge([], [1, 2, 3])); // a empty
-console.log(arraymerge.merge([1, 2, 3], [])); // b empty
-console.log(arraymerge.merge([1, 2], [3, 4, 5])); // exhausting a before b
-console.log(arraymerge.merge([3, 4, 5], [1, 2])); // exhausting b before a
-console.log(arraymerge.merge([1, 2, 5, 6], [3, 4])); // b in the middle of a
-console.log(arraymerge.merge([3, 4], [1, 2, 5, 6])); // a in the middle of b
-console.log(arraymerge.merge([9, 2, 1], [6, 3, 4, 7, 5]));  // not ordered lists
+console.log(arrayMerge.merge([], [])); // both empty
+console.log(arrayMerge.merge([], [1, 2, 3])); // a empty
+console.log(arrayMerge.merge([1, 2, 3], [])); // b empty
+console.log(arrayMerge.merge([1, 2], [3, 4, 5])); // exhausting a before b
+console.log(arrayMerge.merge([3, 4, 5], [1, 2])); // exhausting b before a
+console.log(arrayMerge.merge([1, 2, 5, 6], [3, 4])); // b in the middle of a
+console.log(arrayMerge.merge([3, 4], [1, 2, 5, 6])); // a in the middle of b
+console.log(arrayMerge.merge([9, 2, 1], [6, 3, 4, 7, 5]));  // not ordered lists
 
 // BONUS: Merging several sorted arrays passed as an array of arrays
 
 console.log("BONUS: Multiple Array Merge Happy Path");
-console.log(arraymerge.mergeMulti([[3, 4, 6, 10, 11, 15], [1, 5, 8, 12, 14, 19], [2, 7, 9, 13]]));
+console.log(arrayMerge.mergeMulti([[3, 4, 6, 10, 11, 15], [1, 5, 8, 12, 14, 19], [2, 7, 9, 13]]));
 console.log("BONUS: Multiple Array Merge Alternate Test Cases");
-console.log(arraymerge.mergeMulti([[], [], []]));
-console.log(arraymerge.mergeMulti([[1, 2, 3], [], []]));
-console.log(arraymerge.mergeMulti([[], [1, 2, 3], []]));
-console.log(arraymerge.mergeMulti([[], [], [1, 2, 3]]));
-console.log(arraymerge.mergeMulti([[1, 2, 3], [4, 5, 6, 7], []]));
-console.log(arraymerge.mergeMulti([[4, 5, 6, 7], [1, 2, 3], []]));
-console.log(arraymerge.mergeMulti([[], [4, 5, 6, 7], [1, 2, 3]]));
-console.log(arraymerge.mergeMulti([[1, 2, 7, 8], [3, 6], [4, 5]]));
+console.log(arrayMerge.mergeMulti([[], [], []]));
+console.log(arrayMerge.mergeMulti([[1, 2, 3], [], []]));
+console.log(arrayMerge.mergeMulti([[], [1, 2, 3], []]));
+console.log(arrayMerge.mergeMulti([[], [], [1, 2, 3]]));
+console.log(arrayMerge.mergeMulti([[1, 2, 3], [4, 5, 6, 7], []]));
+console.log(arrayMerge.mergeMulti([[4, 5, 6, 7], [1, 2, 3], []]));
+console.log(arrayMerge.mergeMulti([[], [4, 5, 6, 7], [1, 2, 3]]));
+console.log(arrayMerge.mergeMulti([[1, 2, 7, 8], [3, 6], [4, 5]]));
 
 // Playing around with an array flattening method
 
 console.log("Array Flattening Experiment");
-console.log(arraymerge.flatten([[1, 2], [3, 4]]));
+console.log(arrayMerge.flatten([[1, 2], [3, 4]]));
 
-console.log(arraymerge.flatten([[[10, 11], 1, 2], [3, 4, [5, 6, 7, [12]]]]));
+console.log(arrayMerge.flatten([[[10, 11], 1, 2], [3, 4, [5, 6, 7, [12]]]]));
 

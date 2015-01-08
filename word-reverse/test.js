@@ -29,8 +29,7 @@
 
 var wordReverse  = require('./wordreverse.js');
 
-var message = 'find you will pain only go you recordings security the into if',
-    temp;
+var message = 'find you will pain only go you recordings security the into if';
 
 console.log("Happy Path");
 console.log("----------");
