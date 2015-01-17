@@ -15,6 +15,8 @@
  *
  * Helper function that recursively traverses a binary search tree using a depth-first approach. For each node
  * traversed, a callback function is called passing the node and the result argument.
+ *
+ * 'result' must either be a primitive or an object if multiple return values are needed
  */
 
 function traverse(node, result, callback) {
@@ -109,7 +111,7 @@ var remove = function remove(data) {
     // At this time, we don't support objects nor arrays--only native types, so abort
 
     if (typeof data === "object") {
-        return new Error("BST does not yet support removing objects or arrays");
+        return new Error("remove: BST does not yet support removing objects or arrays");
     }
 
     // Locate the node to be removed. If found, save the node and its parent. Otherwise, exit out.
@@ -151,7 +153,7 @@ var remove = function remove(data) {
                 }
                 break;
             default:
-                return new Error("Impossible state reached--more than two children of a binary tree");
+                return new Error("remove: Impossible state reached--more than two children of a binary tree");
         }
     } else {
         switch (childCount) {
@@ -186,7 +188,7 @@ var remove = function remove(data) {
                 }
                 break;
             default:
-                return new Error("Impossible state reached--more than two children of a binary tree");
+                return new Error("remove: Impossible state reached--more than two children of a binary tree");
         }
     }
 
@@ -243,6 +245,96 @@ var size = function size() {
     return count;
 };
 
+/* largest
+ *
+ * Find the largest element of a BST tree directly [O(h) time, O(1) space where h is the height of the tree]
+ *
+ * If 'largest' is passed 'node', it searches for the largest relative starting at 'node'
+ */
+
+var largest = function largest(node) {
+    var current = node || this.root;
+    while (current !== undefined) {
+        if (current.right === undefined) {
+            return current.value;
+        }
+        current = current.right;
+    }
+    return undefined;
+};
+
+/* secondLargest
+ *
+ * Find the largest element of a BST tree directly [O(h) time, O(1) space where h is the height of the tree]
+ */
+
+var secondLargest = function secondLargest() {
+    var current = this.root;
+    while (current !== undefined) {
+
+        // "If we have a left subtree but not a right subtree, then the current node is the largest overall (the
+        // "rightmost") node. The second largest element must be the largest element in the left subtree. We use our
+        // get_largest() function above to find the largest in that left subtree!"
+
+        if (current.left !== undefined && current.right === undefined) {
+            return largest(current.left);
+        }
+
+        // "If we have a right child, but that right child node doesn't have any children, then the right child
+        // must be the largest element and our current node must be the second largest element!
+
+        if (current.right !== undefined && current.right.left === undefined && current.right.right === undefined) {
+            return current.value;
+        }
+
+        // "Else, we have a right subtree with more than one element, so the largest and second largest are
+        // somewhere in that subtree. So we step right.
+
+        current = current.right;
+    }
+    return undefined;
+};
+
+/* nthLargest
+ *
+ * Walk the BST to in order and return the nthLargest.
+ *
+ * This approach works by traversing the full tree then returning the element at the nth to the last position.
+ * It runs in O(n) time and, if the tree isn't balanced, O(h) space where h is the height of the tree which could
+ * also be 'n'--so O(n) for both space and time worst case.
+ *
+ * Returns 'undefined' if called with 'nth' parameter larger than the size of the BST
+ */
+
+var nthLargest = function nthLargest(nth) {
+
+    var result = {
+        count: 0
+    };
+
+    // Must provide an argument
+
+    if (nth === undefined) {
+        return new Error("nthLargest: required parameter 'nth' omitted from function call");
+    }
+
+    // Since we're looking for the 'nth' largest, adjust nth so that it matches the incremental count as we
+    // traverse the tree from smallest (0) to largest (size).
+
+    nth = this.size() - nth + 1;
+
+    // Traverse the array and save off the value we find when we reach the correct element
+
+    traverse(this.root, result, function nthLargest(node, result) {
+        result.count += 1;
+        if (result.count === nth) {
+            result.value = node.value;
+        }
+    });
+
+    return result.value;
+};
+
 /* toArray
  *
  * Walk the BST inserting the elements into an array.
@@ -250,7 +342,7 @@ var size = function size() {
 
 var toArray = function toArray() {
     var result = [];
-    traverse(this.root, result, function addToArray(node, result){
+    traverse(this.root, result, function toArray(node, result) {
         result.push(node.value);
     });
     return result;
@@ -262,7 +354,7 @@ var toArray = function toArray() {
  */
 
 var toString = function toString() {
-    return JSON.stringify(this.root) || JSON.stringify({});
+    return JSON.stringify(this.root) || {};
 };
 
 /*
@@ -276,6 +368,9 @@ var BST = function() {
         get: get,
         contains: contains,
         size: size,
+        largest: largest,
+        secondLargest: secondLargest,
+        nthLargest: nthLargest,
         toArray: toArray,
         toString: toString
     };
