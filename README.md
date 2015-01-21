@@ -16,5 +16,6 @@ Implemented in a generic way to return the nth to the last element in the tree.
 * 27 'Reverse Words' - Solved using a recursive approach. Converted to an array to satisfy mutability requirement.
 * 29 'Bracket Validator' - Solved the main problem, but haven't yet figured out the bonus.
 * 35 'In-Place Shuffle' - Solved by using the Fisher-Yates in-place shuffle algorithm
-* 36 'Single Riffle Check' - Solved by writing a riffle shuffle function and corresponding check
-* 41 'Merge Sorted Arrays' - Solved using in O(n+m) time and O(2(n+m)) space using indexes for each array w/BONUS solved
+* 36 'Single Riffle Check' - Solved by writing a riffle shuffle function and corresponding checks
+* 41 'Find Duplicate Files' - Solved by building a multi-map hash map based upon CRC-32 signatures for each file
+* 42 'Merge Sorted Arrays' - Solved using in O(n+m) time and O(2(n+m)) space using indexes for each array w/BONUS solved

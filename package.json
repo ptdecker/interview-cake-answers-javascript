@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "async":"0.9.x",
+    "crc":"3.2.x",
+    "dsjslib":"0.6.x"
   },
   "repository": {
     "type":"git",
