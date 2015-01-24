@@ -99,9 +99,32 @@ function getBestSpread(data) {
 }
 
 
+function getBestSpreadParker(data) {
+
+    var minPrice = data[0][1],
+        maxProfit = 0,
+        currentPrice,
+        time;
+
+    for (time = 0; time < data.length; time += 1) {
+        currentPrice = data[time][1];
+        minPrice = Math.min(minPrice, currentPrice);
+        maxProfit = Math.max(maxProfit, currentPrice - minPrice);
+    }
+
+    return maxProfit;
+}
+
 // Run the scenarios
 
+console.log("My Approach");
 var i;
 for (i = 0; i < prices.length; i += 1) {
     console.log(prices[i].date, getBestSpread(prices[i].data));
+}
+
+console.log("\nParker's Approach");
+var i;
+for (i = 0; i < prices.length; i += 1) {
+    console.log(prices[i].date, getBestSpreadParker(prices[i].data));
 }
