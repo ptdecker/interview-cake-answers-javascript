@@ -21,6 +21,8 @@
 
 "use strict";
 
+var stocktools = require('./stocktools.js');
+
 var prices = [{
         date: '2015-01-21',
         data: [[0, 10748], [ 5, 10751], [ 10, 10750], [ 15, 10694], [ 20, 10695], [ 25, 10738], [ 30, 10726],
@@ -72,59 +74,9 @@ var prices = [{
 }];
 
 
-function getBestSpread(data) {
-
-    var bestSpread = {
-            low: data[0],
-            high: data[0],
-            amount: 0
-        },
-        i,
-        currentPrice;
-
-    for (i = 1; i < data.length; i += 1) {
-
-        currentPrice = data[i][1];
-        if (currentPrice < bestSpread.low[1]) {
-            bestSpread.low = data[i];
-        }
-        if (currentPrice > bestSpread.high[1]) {
-            bestSpread.high = data[i];
-        }
-
-    }
-    bestSpread.amount = bestSpread.high[1] - bestSpread.low[1];
-
-    return bestSpread;
-}
-
-
-function getBestSpreadParker(data) {
-
-    var minPrice = data[0][1],
-        maxProfit = 0,
-        currentPrice,
-        time;
-
-    for (time = 0; time < data.length; time += 1) {
-        currentPrice = data[time][1];
-        minPrice = Math.min(minPrice, currentPrice);
-        maxProfit = Math.max(maxProfit, currentPrice - minPrice);
-    }
-
-    return maxProfit;
-}
-
 // Run the scenarios
 
-console.log("My Approach");
 var i;
 for (i = 0; i < prices.length; i += 1) {
-    console.log(prices[i].date, getBestSpread(prices[i].data));
-}
-
-console.log("\nParker's Approach");
-var i;
-for (i = 0; i < prices.length; i += 1) {
-    console.log(prices[i].date, getBestSpreadParker(prices[i].data));
+    console.log(prices[i].date, stocktools.getBestSpread(prices[i].data));
 }
