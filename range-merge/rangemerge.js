@@ -10,9 +10,9 @@
 
 module.exports.rangemerge = function rangemerge(array) {
 
-    var merged = [],
-        element = [],
-        i;
+    var merged,   // Array of merged tuple results
+        element,  // Next element to be added to the merged tuple results
+        i;        // Index to the current tuple being evaluated;
 
     if (array.length === 0) {
         return [];
@@ -23,7 +23,8 @@ module.exports.rangemerge = function rangemerge(array) {
     });
 
     i = 0;
-    element = array[0];
+    element = array[i];
+    merged = [];
     do {
         i += 1;
         if (i < array.length && element[1] >= array[i][0]) {
