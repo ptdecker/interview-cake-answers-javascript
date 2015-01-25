@@ -9,6 +9,7 @@ plus a test script that runs through the test cases presented by the Interview C
 Solutions:
 
 * 01 'Apple Stocks' - Found low and high inflection points in the data then returned largest gap
+* 02 'Product of every integer except integer at that index'
 * 04 'Merging Meeting Times' - Implemented by sorting tuples then walking down them O(nlog(n))
 * 10 'Second Largest' - Implemented a BST library and added to it the ability to return the next to the 2nd largest.
 Implemented in a generic way to return the nth to the last element in the tree.
