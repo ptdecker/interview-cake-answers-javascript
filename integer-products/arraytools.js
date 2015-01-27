@@ -21,7 +21,7 @@
  * the accumulated product of all the values from the right. A pretty sweet approach.  Parker characterizes this
  * as a "greedy" algorithm; however, I don't think it complies with the definition of such because there is
  * no selection of a candidate from a candidate set (characteristic one) nor feasibility function
- * characteristic two).
+ * characteristic two) (c.f. https://en.wikipedia.org/wiki/Greedy_algorithm)
  */
 
 module.exports.intProductsExcludingIndex = function intProductExcludingIndex(array) {
@@ -40,7 +40,7 @@ module.exports.intProductsExcludingIndex = function intProductExcludingIndex(arr
     }
     */
 
-    // The two-pass O(n) approach
+    // The nice, clean, two-pass O(n) approach
 
     for(factor = 1, i = 0; i < array.length; i += 1) {
         result[i]  = factor;
