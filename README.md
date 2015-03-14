@@ -10,9 +10,11 @@ Solutions:
 
 * 01 'Apple Stocks' - Found low and high inflection points in the data then returned largest gap
 * 02 'Product of every integer in an array except integer at that index'
+* 03 'Product of the three largest integers in an array' - Implemented the 'bonus' generic solution of product of 'x' largest integers
 * 04 'Merging Meeting Times' - Implemented by sorting tuples then walking down them O(nlog(n))
-* 10 'Second Largest' - Implemented a BST library and added to it the ability to return the next to the 2nd largest.
-Implemented in a generic way to return the nth to the last element in the tree.
+* 05 'Making Change' - Implemented using O(n * m) time, O(n) space, bottom-up non-recursive approach
+* 06 'Rectangular Love' - Finds the intersection of two rectangles
+* 10 'Second Largest' - Implemented a BST library and added to it the ability to return the next to the 2nd largest. Implemented in a generic way to return the nth to the last element in the tree.
 * 16 'Cake Thief' - Solved using a dynamic programming solution to the unbounded knapsack problem
 * 22 'Delete Node' - Solved by using a single linked list
 * 25 'kth To The Last Node in a Singly-Linked List' - Solved by using a second offset sliding pointer
