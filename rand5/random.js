@@ -8,13 +8,13 @@
 
 "use strict";
 
-/* rand7()
+/* rand(x)
  *
- * Returns a random number from one to seven inclusively.
+ * Returns a random integer from one to 'x' inclusively.
  */
 
-function rand7() {
-    return Math.floor((Math.random() * 7) + 1);
+function rand(x) {
+    return Math.floor((Math.random() * x) + 1);
 }
 
 
@@ -34,7 +34,7 @@ module.exports.rand5UsingRand7 = function rand5UsingRand7() {
         result = 0;
 
     do {
-        result = rand7();
+        result = rand(7);
         triesRemaining -= 1;
     } while (result > 5 && triesRemaining > 0);
 
