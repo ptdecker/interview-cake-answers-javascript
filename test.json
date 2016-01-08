@@ -1,0 +1,147 @@
+[
+  {
+    "id": "P-107",
+    "parent_id": null,
+    "position": "1",
+    "type": "configurable-product",
+    "sku": "20000-CFG",
+    "name": "Gramercy Pink",
+    "description": null,
+    "short_description": null,
+    "url_path": "https://store.starshop.com/gramercy-pink-118",
+    "image": "http://images.starshop.com/catalog/product/3/e/3ef49003c65f43a30cf691ad85e78c0fea6ba857f9f739524618135f21c15682_1280-1280_2.png",
+    "video_dash_url": null,
+    "video_hls_url": null,
+    "video_mp4_url": null,
+    "price": "$19.00",
+    "special_price": null,
+    "brand": null,
+    "vendor": null,
+    "qty": "0",
+    "stock_status": "1",
+    "created_at": "2015-08-03T16:03:49-05:00",
+    "updated_at": "2015-03-18 21:07:55",
+    "media_gallery": [
+      {
+        "position": "2",
+        "label": "",
+        "image_url": "http://images.starshop.com/catalog/product/c/c/cc92600ee15a313ed3c1cccf8697c8ac1a77bd42cca3ded7f77a4ab6bc161c4d_1280-1280_2.png"
+      },
+      {
+        "position": "3",
+        "label": "",
+        "image_url": "http://images.starshop.com/catalog/product/5/6/56595f025084764b56fcd1d039a688a004afba996e4f105e04a04f2125478ffb_1280-1280_2.png"
+      }
+    ],
+    "options": [
+      {
+        "attribute": "shade",
+        "label": "Shade",
+        "type": "dropdown",
+        "values": [
+          "Gramercy Pink",
+          "Time Square Tawny",
+          "Upper West Praline"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "P-106",
+        "parent_id": "P-107",
+        "position": 1,
+        "type": "simple-product",
+        "sku": "28",
+        "name": "Gramercy Pink",
+        "url_path": "gramercy-pink",
+        "image": "http://images.starshop.com/catalog/product/3/e/3ef49003c65f43a30cf691ad85e78c0fea6ba857f9f739524618135f21c15682_1280-1280_1.png",
+        "price": "$19.00",
+        "special_price": null,
+        "brand": null,
+        "vendor": null,
+        "qty": "133",
+        "stock_status": "1",
+        "media_gallery": [
+          {
+            "position": "2",
+            "label": "",
+            "image_url": "http://images.starshop.com/catalog/product/c/c/cc92600ee15a313ed3c1cccf8697c8ac1a77bd42cca3ded7f77a4ab6bc161c4d_1280-1280_1.png"
+          },
+          {
+            "position": "3",
+            "label": "",
+            "image_url": "http://images.starshop.com/catalog/product/5/6/56595f025084764b56fcd1d039a688a004afba996e4f105e04a04f2125478ffb_1280-1280_1.png"
+          }
+        ],
+        "option": {
+          "size": false,
+          "color": false
+        }
+      },
+      {
+        "id": "P-108",
+        "parent_id": "P-107",
+        "position": 2,
+        "type": "simple-product",
+        "sku": "27",
+        "name": "Time Square Tawny",
+        "url_path": "time-square-tawny",
+        "image": "http://images.starshop.com/catalog/product/3/e/3ef49003c65f43a30cf691ad85e78c0fea6ba857f9f739524618135f21c15682_1280-1280_3.png",
+        "price": "$19.00",
+        "special_price": null,
+        "brand": null,
+        "vendor": null,
+        "qty": "126",
+        "stock_status": "1",
+        "media_gallery": [
+          {
+            "position": "2",
+            "label": "",
+            "image_url": "http://images.starshop.com/catalog/product/c/c/cc92600ee15a313ed3c1cccf8697c8ac1a77bd42cca3ded7f77a4ab6bc161c4d_1280-1280_3.png"
+          },
+          {
+            "position": "3",
+            "label": "",
+            "image_url": "http://images.starshop.com/catalog/product/5/6/56595f025084764b56fcd1d039a688a004afba996e4f105e04a04f2125478ffb_1280-1280_3.png"
+          }
+        ],
+        "option": {
+          "size": false,
+          "color": false
+        }
+      },
+      {
+        "id": "P-109",
+        "parent_id": "P-107",
+        "position": 3,
+        "type": "simple-product",
+        "sku": "29",
+        "name": "Upper West Praline",
+        "url_path": "upper-west-praline",
+        "image": "http://images.starshop.com/catalog/product/3/e/3ef49003c65f43a30cf691ad85e78c0fea6ba857f9f739524618135f21c15682_1280-1280_4.png",
+        "price": "$19.00",
+        "special_price": null,
+        "brand": null,
+        "vendor": null,
+        "qty": "0",
+        "stock_status": "0",
+        "media_gallery": [
+          {
+            "position": "2",
+            "label": "",
+            "image_url": "http://images.starshop.com/catalog/product/c/c/cc92600ee15a313ed3c1cccf8697c8ac1a77bd42cca3ded7f77a4ab6bc161c4d_1280-1280_4.png"
+          },
+          {
+            "position": "3",
+            "label": "",
+            "image_url": "http://images.starshop.com/catalog/product/5/6/56595f025084764b56fcd1d039a688a004afba996e4f105e04a04f2125478ffb_1280-1280_4.png"
+          }
+        ],
+        "option": {
+          "size": false,
+          "color": false
+        }
+      }
+    ]
+  }
+]
