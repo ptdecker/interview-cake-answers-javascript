@@ -25,3 +25,4 @@ Solutions:
 * 36 'Single Riffle Check' - Solved by writing a riffle shuffle function and corresponding checks
 * 41 'Find Duplicate Files' - Solved by building a multi-map hash map based upon CRC-32 signatures for each file
 * 42 'Merge Sorted Arrays' - Solved using in O(n+m) time and O(2(n+m)) space using indexes for each array w/BONUS solved
+* 'Recursive String Permutations' - Solved with a single function that returns as an array of permutations, uses recursion, and containes no loops
